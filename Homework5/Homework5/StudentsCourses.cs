@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Homework5
 {
-    class StudensCourses
+    class StudentsCourses
     {
-        int StudentID { get; set; }
-        int CoursesID { get; set; }
+        public int StudentID { get; set; }
+        public int CoursesID { get; set; }
     }
 }

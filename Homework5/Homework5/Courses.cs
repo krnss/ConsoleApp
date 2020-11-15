@@ -8,10 +8,14 @@ namespace Homework5
 {
     class Courses
     {
-        int CoursesID { get; set; }
-        string Name { get; set; }
-        string Description { get; set; }
-        int TeatherID { get; set; }
+        public int CoursesID { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public int TeatherID { get; set; }
 
+        public override string ToString()
+        {
+            return $"ID: {CoursesID.ToString("000")}; Name: {Name}; Description: {Description}; TeatherID: {TeatherID}";
+        }
     }
 }

@@ -8,8 +8,8 @@ namespace Homework5
 {
     class Teacher
     {
-        int TeacherID { get; set; }
-        string Name { get; set; }
-        string Surname { get; set; }
+        public int TeacherID { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
     }
 }
