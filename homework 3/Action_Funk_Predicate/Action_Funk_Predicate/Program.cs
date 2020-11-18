@@ -14,16 +14,21 @@ namespace Action_Funk_Predicate
         {
             StringCollector stringCollector = new StringCollector();
             AlphaNumbericCollector alphaNumbericCollector = new AlphaNumbericCollector();
+
             Action<string> myAction;
+            Action<string> myAction2 = alphaNumbericCollector.Add;
             while (true)
             {
                 string s = Console.ReadLine();
                 myAction = stringCollector.Add;
                 if (Regex.IsMatch(s, "[0-9]"))
                 {
-                    myAction = alphaNumbericCollector.Add;
+                    myAction2(s);
                 }
-                myAction(s);
+                else
+                {
+                    myAction(s);
+                }
             }
         }
     }

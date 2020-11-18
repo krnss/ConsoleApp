@@ -14,17 +14,25 @@ namespace Delegate
         {
             StringCollector stringCollector = new StringCollector();
             AlphaNumbericCollector alphaNumbericCollector = new AlphaNumbericCollector();
+
             MyDeledate myDeledate;
+            MyDeledate myDeledate2;
+
+            myDeledate = stringCollector.Add;
+            myDeledate2 = alphaNumbericCollector.Add;
 
             while (true)
             {
                 string s = Console.ReadLine();
-                myDeledate = stringCollector.Add;
+
                 if (Regex.IsMatch(s, "[0-9]"))
                 {
-                    myDeledate = alphaNumbericCollector.Add;
+                    myDeledate2(s);
                 }
-                myDeledate(s);
+                else
+                {
+                    myDeledate(s);
+                }
             }
         }
     }

@@ -10,21 +10,28 @@ namespace Event
     class Program
     {
         delegate void MyDeledate(string s);
-        private static event MyDeledate MyEvent;
+        private static event MyDeledate MyEvent1;
+        private static event MyDeledate MyEvent2;
         static void Main(string[] args)
         {
             StringCollector stringCollector = new StringCollector();
             AlphaNumbericCollector alphaNumbericCollector = new AlphaNumbericCollector();
 
+            MyEvent1 = stringCollector.Add;
+            MyEvent2 = alphaNumbericCollector.Add;
+
             while (true)
             {
                 string s = Console.ReadLine();
-                MyEvent = stringCollector.Add;
+
                 if (Regex.IsMatch(s, "[0-9]"))
                 {
-                    MyEvent = alphaNumbericCollector.Add;
+                    MyEvent2(s);
                 }
-                MyEvent(s);
+                else
+                {
+                    MyEvent1(s);
+                }
             }
         }
     }
