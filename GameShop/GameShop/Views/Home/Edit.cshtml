@@ -1,0 +1,59 @@
+﻿@using GameShop.Interfase;
+@model IProduct
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="col-md-7 col-lg-8">
+    <h4 class="mb-3">Edit</h4>
+    <form class="needs-validation" novalidate=""method="post" action="/Home/Edit">
+        <div class="row g-3">
+            <input type="hidden" value="@Model.ID" name="Id" />
+            <div class="col-sm-6">
+                <label for="firstName" class="form-label">NAME</label>
+                <input type="text" class="form-control" name="Name" placeholder="" value="@Model.Name" required="">
+                <div class="invalid-feedback">
+                    Please enter Name
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <label for="lastName" class="form-label">Autor</label>
+                <input type="text" class="form-control" name="Autor" placeholder="" value="@Model.Autor" required="">
+                <div class="invalid-feedback">
+                    Please enter Autor
+                </div>
+            </div>
+
+            <div class="col-12">
+                <label for="address" class="form-label">Prise</label>
+                <input type="text" class="form-control" name="Prise" placeholder="" value="@Model.Prise" required="">
+                <div class="invalid-feedback">
+                    Please enter Prise
+                </div>
+            </div>
+            <div class="col-12">
+                <label for="address" class="form-label">FOTO</label>
+                <input type="text" class="form-control" name="UrlFoto" placeholder="" value="@Model.UrlFoto" required="">
+                <div class="invalid-feedback">
+                    Please enter Prise
+                </div>
+            </div>
+
+
+
+            <div class="col-md-5 col-lg-4 order-md-last">
+                <img src="@Model.UrlFoto" alt="Alternate Text" />
+            </div>
+
+
+            <hr class="my-4">
+
+            <button class="mt-3 w-100 btn btn-primary btn-lg" type="submit">Save</button>
+
+        </div>
+    </form>
+</div>
+
+
+

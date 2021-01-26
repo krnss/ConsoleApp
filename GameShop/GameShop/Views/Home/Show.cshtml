@@ -1,0 +1,39 @@
+﻿@using GameShop.Interfase;
+@model IProduct
+
+@{ViewBag.Title = "Product"; }
+
+<h2>Product</h2>
+
+<div>
+    <h4>Game</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <main class="container">
+            <div class="row mb-2">
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">@Model.Name</strong>
+                            <h3 class="mb-0">@Model.Prise</h3>
+                            <div class="mb-1 text-muted">@Model.Autor</div>
+                            <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="col-auto d-none d-lg-block">
+                        <img src="@Model.UrlFoto" alt="Alternate Text" style="width:250px;height250px;"/>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.ID  }) |
+    @Html.ActionLink("Delete", "DeleteGame", new {  id = Model.ID  }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

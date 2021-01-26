@@ -1,0 +1,28 @@
+﻿@using GameShop.Interfase;
+@model List<IProduct>
+
+@{ViewBag.Title = "Home Page"; }
+
+
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center mt-4">
+
+    @foreach (GameShop.Models.Game game in Model)
+    {
+
+        <div class="col">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 fw-normal">@game.Name</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$@game.Prise <small class="text-muted">грн</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>@game.Autor</li>
+                    </ul>
+                    <a href="/Home/Show/@game.ID">content</a>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>
